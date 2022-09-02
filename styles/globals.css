@@ -16,6 +16,7 @@ a {
 }
 
 @media (prefers-color-scheme: dark) {
+<<<<<<< Updated upstream
   html {
     color-scheme: dark;
   }
@@ -23,4 +24,105 @@ a {
     color: white;
     background: black;
   }
+=======
+	html {
+		color-scheme: dark;
+	}
+	body {
+		color: white;
+		background: black;
+	}
+}
+
+/* Fonts */
+.font-quick-sand-regular {
+	font-family: quickSandRegular;
+}
+
+.font-quick-sand-medium {
+	font-family: quickSandMedium;
+}
+
+.font-quick-sand-bold {
+	font-family: quickSandBold;
+}
+
+.font-size-30 {
+	font-size: 30px;
+}
+
+.font-size-20 {
+	font-size: 20px;
+}
+
+.font-size-18 {
+	font-size: 18px;
+}
+
+.font-size-28 {
+	font-size: 28px;
+}
+/*  */
+
+/* Colors */
+.color-green {
+	color: var(--green);
+}
+
+.color-light-green {
+	color: var(--light-green);
+}
+
+.color-dark-green {
+	color: var(--dark-green);
+}
+
+.color-white {
+	color: white;
+}
+/*  */
+
+/* Backgrounds */
+.bg-light-green {
+	background-color: var(--light-green);
+}
+
+.bg-landing,
+.bg-question {
+	background-size: cover;
+	background-position: top;
+}
+
+.bg-landing {
+	background-image: url("/assets/images/UiBgLand.png");
+}
+
+.bg-question {
+	background-image: url("/assets/images/UiBgQues.png");
+}
+/*  */
+
+/* Borders */
+.border-white {
+	border: 2px solid white;
+}
+/*  */
+
+.header-web {
+	z-index: 0;
+	position: absolute;
+	max-width: 100%;
+	height: auto;
+	top: 60px;
+	left: 0;
+}
+
+.bg-landing h1 {
+	margin-bottom: 7rem;
+>>>>>>> Stashed changes
+}
+
+.bg-question h1 {
+	margin-top: 2rem;
+	margin-bottom: 10rem;
 }
