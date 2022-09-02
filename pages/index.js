@@ -4,9 +4,14 @@ import Master from "../components/Master";
 function Index() {
 	return (
 		<Master>
+			<Image
+				src="/assets/images/HeaderWebNew.png"
+				alt="Header Web"
+				className="header-web"
+			/>
 			<Row className="justify-content-center bg-landing h-100">
-				<Col lg={6}>
-					<h1 className="my-5 text-center font-quick-sand-bold font-size-30">
+				<Col lg={6} className="position-relative" style={{ zIndex: 1 }}>
+					<h1 className="mt-3 text-center font-quick-sand-bold font-size-30">
 						Mainkan quiz Pristime
 						<br />
 						It's Pristine8.6+ Time versi Kamu!
