@@ -27,6 +27,7 @@ body {
 		Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
 		sans-serif;
 	color: white;
+	background-color: white;
 }
 
 a {
@@ -36,16 +37,6 @@ a {
 
 * {
 	box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-	html {
-		color-scheme: dark;
-	}
-	body {
-		color: white;
-		background: black;
-	}
 }
 
 /* Fonts */
@@ -61,8 +52,8 @@ a {
 	font-family: quickSandBold;
 }
 
-.font-size-30 {
-	font-size: 30px;
+.font-size-28 {
+	font-size: 28px;
 }
 
 .font-size-20 {
@@ -97,10 +88,18 @@ a {
 	background-color: var(--light-green);
 }
 
-.bg-landing {
-	background-image: url("/assets/images/UiBgLand.png");
+.bg-landing,
+.bg-question {
 	background-size: cover;
 	background-position: top;
+}
+
+.bg-landing {
+	background-image: url("/assets/images/UiBgLand.png");
+}
+
+.bg-question {
+	background-image: url("/assets/images/UiBgQues.png");
 }
 /*  */
 
@@ -120,5 +119,15 @@ a {
 }
 
 .bg-landing h1 {
+	margin-top: 1.5rem;
 	margin-bottom: 7rem;
+}
+
+.bg-question h1 {
+	margin-top: 2rem;
+	margin-bottom: 11rem;
+}
+
+.cursor-pointer {
+	cursor: pointer;
 }
