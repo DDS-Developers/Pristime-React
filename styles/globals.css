@@ -16,15 +16,6 @@ a {
 }
 
 @media (prefers-color-scheme: dark) {
-<<<<<<< Updated upstream
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
-=======
 	html {
 		color-scheme: dark;
 	}
@@ -119,7 +110,6 @@ a {
 
 .bg-landing h1 {
 	margin-bottom: 7rem;
->>>>>>> Stashed changes
 }
 
 .bg-question h1 {
