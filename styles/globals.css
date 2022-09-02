@@ -1,26 +1,111 @@
+:root {
+	--green: #17a99c;
+	--light-green: #2bbeb4;
+	--dark-green: #009d99;
+}
+
+@font-face {
+	font-family: quickSandRegular;
+	src: url("/assets/fonts/Quicksand-Regular.ttf");
+}
+
+@font-face {
+	font-family: quickSandMedium;
+	src: url("/assets/fonts/Quicksand-Medium.ttf");
+}
+
+@font-face {
+	font-family: quickSandBold;
+	src: url("/assets/fonts/Quicksand-Bold.ttf");
+}
+
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	padding: 0;
+	margin: 0;
+	font-family: quickSandMedium, -apple-system, BlinkMacSystemFont, Segoe UI,
+		Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+		sans-serif;
+	color: white;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+	html {
+		color-scheme: dark;
+	}
+	body {
+		color: white;
+		background: black;
+	}
 }
+
+/* Fonts */
+.font-quick-sand-regular {
+	font-family: quickSandRegular;
+}
+
+.font-quick-sand-medium {
+	font-family: quickSandMedium;
+}
+
+.font-quick-sand-bold {
+	font-family: quickSandBold;
+}
+
+.font-size-30 {
+	font-size: 30px;
+}
+
+.font-size-20 {
+	font-size: 20px;
+}
+
+.font-size-18 {
+	font-size: 18px;
+}
+/*  */
+
+/* Colors */
+.color-green {
+	color: var(--green);
+}
+
+.color-light-green {
+	color: var(--light-green);
+}
+
+.color-dark-green {
+	color: var(--dark-green);
+}
+
+.color-white {
+	color: white;
+}
+/*  */
+
+/* Backgrounds */
+.bg-light-green {
+	background-color: var(--light-green);
+}
+
+.bg-landing {
+	background-image: url("/assets/images/UiBgLand.png");
+	background-size: cover;
+	background-position: top;
+}
+/*  */
+
+/* Borders */
+.border-white {
+	border: 2px solid white;
+}
+/*  */
