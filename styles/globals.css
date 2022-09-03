@@ -53,7 +53,8 @@ a {
 	font-size: 35px;
 }
 
-.font-size-28 {
+.font-size-28,
+.font-size-28b {
 	font-size: 28px;
 }
 
@@ -160,7 +161,7 @@ a {
 .header-web {
 	z-index: 0;
 	position: absolute;
-	max-width: 100%;
+	width: 100%;
 	height: auto;
 	top: 58px;
 	left: 0;
@@ -221,10 +222,8 @@ a {
 
 @media (max-width: 575.98px) {
 	.bg-landing,
-	.bg-question,
-	.bg-result,
-	.bg-form {
-		background-image: url("/assets/images/Bg_ilus_mobile.png");
+	.bg-result {
+		background-image: url("/assets/images/UiBgQues.png");
 	}
 
 	.bg-landing h1 {
@@ -232,12 +231,24 @@ a {
 		margin-bottom: 4rem;
 	}
 
+	.bg-question h1 {
+		margin-bottom: 5rem;
+	}
+
 	.font-size-28 {
 		font-size: 23px;
 	}
 
+	.font-size-28b {
+		font-size: 17px;
+	}
+
 	.font-size-20 {
 		font-size: 16px;
+	}
+
+	.header-web {
+		height: 150px;
 	}
 }
 

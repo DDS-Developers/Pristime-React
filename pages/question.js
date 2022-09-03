@@ -84,7 +84,12 @@ function Index() {
 			<Image
 				src="/assets/images/HeaderWebNew.png"
 				alt="Header Web"
-				className="header-web"
+				className="header-web d-none d-lg-block"
+			/>
+			<Image
+				src="/assets/images/CoverBanner.png"
+				alt="Header Mobile"
+				className="header-web d-block d-lg-none"
 			/>
 			{loading === false && (
 				<Row className="justify-content-center bg-question h-100">
@@ -93,11 +98,15 @@ function Index() {
 						className="position-relative"
 						style={{ zIndex: 1 }}
 					>
-						<h1 className="text-center font-quick-sand-bold font-size-28">
-							{content.title}
-						</h1>
-						<Row className="justify-content-between">
-							<Col lg={5}>
+						<Row className="justify-content-center">
+							<Col xs={8} lg>
+								<h1 className="text-center font-quick-sand-bold font-size-28b">
+									{content.title}
+								</h1>
+							</Col>
+						</Row>
+						<Row className="justify-content-center justify-content-lg-between">
+							<Col xs={9} lg={5} className="mb-4 mb-lg-0">
 								<Link href={content.questionAHref}>
 									<motion.div
 										whileHover={{ scale: 1.1 }}
@@ -111,7 +120,16 @@ function Index() {
 									</motion.div>
 								</Link>
 							</Col>
-							<Col lg={5}>
+							<Col xs={10} className="d-block d-lg-none mb-4">
+								<div
+									style={{
+										height: "2px",
+										borderBottom:
+											"2px solid var(--light-green)",
+									}}
+								/>
+							</Col>
+							<Col xs={9} lg={5}>
 								<Link href={content.questionBHref}>
 									<motion.div
 										whileHover={{ scale: 1.1 }}
