@@ -40,10 +40,6 @@ a {
 }
 
 /* Fonts */
-.font-quick-sand-regular {
-	font-family: quickSandRegular;
-}
-
 .font-quick-sand-medium {
 	font-family: quickSandMedium;
 }
@@ -62,6 +58,10 @@ a {
 
 .font-size-18 {
 	font-size: 18px;
+}
+
+.font-size-14 {
+	font-size: 14px;
 }
 /*  */
 
@@ -88,8 +88,13 @@ a {
 	background-color: var(--light-green);
 }
 
+.bg-dark-green {
+	background-color: var(--dark-green);
+}
+
 .bg-landing,
-.bg-question {
+.bg-question,
+.bg-result {
 	background-size: cover;
 	background-position: top;
 }
@@ -100,6 +105,10 @@ a {
 
 .bg-question {
 	background-image: url("/assets/images/UiBgQues.png");
+}
+
+.bg-result {
+	background-image: url("/assets/images/UiWebRes.png");
 }
 /*  */
 
@@ -128,6 +137,16 @@ a {
 	margin-bottom: 11rem;
 }
 
+.bg-result .result-content {
+	margin-top: 10rem;
+}
+
 .cursor-pointer {
 	cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+	body {
+		overflow-y: hidden;
+	}
 }
