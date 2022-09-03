@@ -63,10 +63,15 @@ a {
 .font-size-14 {
 	font-size: 14px;
 }
+
+.font-size-12 {
+	font-size: 12px;
+}
 /*  */
 
 /* Colors */
-.color-green {
+.color-green,
+.color-green:hover {
 	color: var(--green);
 }
 
@@ -94,7 +99,8 @@ a {
 
 .bg-landing,
 .bg-question,
-.bg-result {
+.bg-result,
+.bg-form {
 	background-size: cover;
 	background-position: top;
 }
@@ -107,14 +113,24 @@ a {
 	background-image: url("/assets/images/UiBgQues.png");
 }
 
-.bg-result {
+.bg-result,
+.bg-form {
 	background-image: url("/assets/images/UiWebRes.png");
+}
+
+.bg-white {
+	background-color: white;
 }
 /*  */
 
 /* Borders */
 .border-white {
 	border: 2px solid white;
+}
+
+.border-green,
+.border-green:hover {
+	border: 1px solid var(--green);
 }
 /*  */
 
@@ -145,8 +161,31 @@ a {
 	cursor: pointer;
 }
 
-@media (min-width: 1024px) {
+.fullwidth-row > * {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.bg-form {
+	padding-top: 7rem;
+	padding-bottom: 7rem;
+}
+
+.form-control:focus {
+	box-shadow: 0 0 0 0.25rem rgba(23, 169, 156, 0.25);
+}
+
+.form-check-input {
+	border: 1px solid var(--green);
+	background-color: transparent;
+}
+
+.form-check-input:checked {
+	background-color: var(--green);
+}
+
+/* @media (min-width: 1024px) {
 	body {
 		overflow-y: hidden;
 	}
-}
+} */

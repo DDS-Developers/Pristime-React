@@ -88,7 +88,7 @@ function Index() {
 									fluid
 									className="mb-4"
 								/>
-								<Link href="#">
+								<Link href="/form">
 									<motion.div
 										className="rounded-pill bg-dark-green shadow py-2 font-quick-sand-bold text-center font-size-14  cursor-pointer"
 										whileHover={{ scale: 1.1 }}
