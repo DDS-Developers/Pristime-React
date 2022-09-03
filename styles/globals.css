@@ -162,7 +162,7 @@ a {
 	position: absolute;
 	max-width: 100%;
 	height: auto;
-	top: 60px;
+	top: 58px;
 	left: 0;
 }
 
@@ -217,6 +217,28 @@ a {
 	border-left: 3px solid var(--dark-green);
 	height: 100%;
 	width: 2px;
+}
+
+@media (max-width: 575.98px) {
+	.bg-landing,
+	.bg-question,
+	.bg-result,
+	.bg-form {
+		background-image: url("/assets/images/Bg_ilus_mobile.png");
+	}
+
+	.bg-landing h1 {
+		margin-top: 2rem;
+		margin-bottom: 4rem;
+	}
+
+	.font-size-28 {
+		font-size: 23px;
+	}
+
+	.font-size-20 {
+		font-size: 16px;
+	}
 }
 
 /* @media (min-width: 1024px) {

@@ -11,7 +11,10 @@ function Master({ children }) {
 				<link rel="icon" href="/assets/images/pristine-8-6-logo.png" />
 			</Head>
 			<Container fluid style={{ height: "100vh" }}>
-				<Row className="shadow bg-white">
+				<Row
+					className="shadow bg-white position-relative"
+					style={{ zIndex: 10 }}
+				>
 					<Col>
 						<div className="py-2">
 							<Image

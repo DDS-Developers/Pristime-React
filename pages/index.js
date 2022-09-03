@@ -12,16 +12,25 @@ function Index() {
 			<Image
 				src="/assets/images/HeaderWebNew.png"
 				alt="Header Web"
-				className="header-web"
+				className="header-web d-none d-lg-block"
+			/>
+			<Image
+				src="/assets/images/CoverBanner.png"
+				alt="Header Mobile"
+				className="header-web d-block d-lg-none"
 			/>
 			<Row className="justify-content-center bg-landing h-100">
 				<Col lg={6} className="position-relative" style={{ zIndex: 1 }}>
-					<h1 className="text-center font-quick-sand-bold font-size-28">
-						Mainkan quiz Pristime <br /> It's Pristine8.6+ Time
-						versi Kamu!
-					</h1>
 					<Row className="justify-content-center">
-						<Col lg={4}>
+						<Col xs={9} lg>
+							<h1 className="text-center font-quick-sand-bold font-size-28">
+								Mainkan quiz Pristime <br /> It's Pristine8.6+
+								Time versi Kamu!
+							</h1>
+						</Col>
+					</Row>
+					<Row className="justify-content-center">
+						<Col xs={6} lg={4}>
 							<Image
 								src="/assets/images/Pristime_logo.png"
 								alt="Pristime Logo"
@@ -30,7 +39,7 @@ function Index() {
 						</Col>
 					</Row>
 					<Row className="justify-content-center mb-2">
-						<Col lg={6}>
+						<Col xs={9} lg={6}>
 							<Image
 								src="/assets/images/Cover.png"
 								alt="Cover"
@@ -39,7 +48,7 @@ function Index() {
 						</Col>
 					</Row>
 					<Row className="justify-content-center mb-4">
-						<Col lg={10}>
+						<Col xs={9} lg={10}>
 							<div className="color-green text-center font-size-20">
 								Dapatkan <strong>FREE STARTER KIT</strong>
 								<br />
@@ -48,7 +57,7 @@ function Index() {
 						</Col>
 					</Row>
 					<Row className="justify-content-center">
-						<Col lg={5} className="d-grid">
+						<Col xs={7} lg={5} className="d-grid">
 							<Link href="/question?number=1">
 								<motion.div
 									className="rounded-pill bg-light-green border-white text-center font-quick-sand-bold font-size-18 py-1 cursor-pointer"
