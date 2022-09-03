@@ -2,6 +2,7 @@
 	--green: #17a99c;
 	--light-green: #2bbeb4;
 	--dark-green: #009d99;
+	--extra-light-green: #e3f9f0;
 }
 
 @font-face {
@@ -48,6 +49,10 @@ a {
 	font-family: quickSandBold;
 }
 
+.font-size-35 {
+	font-size: 35px;
+}
+
 .font-size-28 {
 	font-size: 28px;
 }
@@ -58,6 +63,10 @@ a {
 
 .font-size-18 {
 	font-size: 18px;
+}
+
+.font-size-15 {
+	font-size: 15px;
 }
 
 .font-size-14 {
@@ -132,6 +141,20 @@ a {
 .border-green:hover {
 	border: 1px solid var(--green);
 }
+
+.border-green-bold {
+	border: 2px solid var(--green);
+}
+
+.border-bottom-green-dashed {
+	border-bottom: 1px dashed var(--green);
+}
+/*  */
+
+/* Line heights */
+.line-height-25 {
+	line-height: 25px;
+}
 /*  */
 
 .header-web {
@@ -182,6 +205,18 @@ a {
 
 .form-check-input:checked {
 	background-color: var(--green);
+}
+
+.invitation-modal-content {
+	background-color: var(--extra-light-green);
+	border-radius: 20px;
+}
+
+.invitation-separator {
+	margin: 0 auto;
+	border-left: 3px solid var(--dark-green);
+	height: 100%;
+	width: 2px;
 }
 
 /* @media (min-width: 1024px) {
