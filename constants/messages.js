@@ -1,2 +1,1 @@
-export const err =
-	"Mohon maaf, ada kendala dalam mengirimkan formulir kamu. Silakan coba lagi.";
+export const err = "Mohon maaf, sedang terjadi kendala. Silakan coba lagi.";

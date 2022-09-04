@@ -14,6 +14,8 @@ import { ReactSVG } from "react-svg";
 import { hasCookie } from "cookies-next";
 import axios from "axios";
 
+const upperCase = require("voca/upper_case");
+
 function Result() {
 	const router = useRouter();
 
@@ -76,6 +78,33 @@ function Result() {
 
 			router.push("/form");
 		} catch (error) {
+			var message = err;
+
+			if (error.response) {
+				message = error.response.data.message;
+			}
+
+			alert(message);
+		}
+	};
+	const handleDownloadClick = async () => {
+		const type = upperCase(router.query.type);
+		const url = `${URL.API}/bandung_submission/download_result_image?result=${type}`;
+
+		try {
+			const result = await axios.get(url);
+			const image = `data:image/png;base64,${result.data.result.image}`;
+			const filenameArray = result.data.result.filename.split(".");
+			const reactBase64Downloaded = await import(
+				"react-base64-downloader"
+			);
+
+			reactBase64Downloaded.triggerBase64Download(
+				image,
+				filenameArray[0]
+			);
+		} catch (error) {
+			console.log(error);
 			var message = err;
 
 			if (error.response) {
@@ -187,6 +216,9 @@ function Result() {
 												);
 											}}
 											className="me-3"
+											onClick={() =>
+												handleDownloadClick()
+											}
 										/>
 										<ReactSVG
 											src="/assets/images/facebook-logo.svg"
@@ -204,6 +236,9 @@ function Result() {
 													"35px"
 												);
 											}}
+											onClick={() =>
+												handleDownloadClick()
+											}
 										/>
 									</Col>
 								</Row>
