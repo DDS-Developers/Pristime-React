@@ -202,47 +202,58 @@ function Result() {
 										lg={4}
 										className="d-flex justify-content-center justify-content-lg-start align-items-center"
 									>
-										<ReactSVG
-											src="/assets/images/instagram-logo.svg"
-											beforeInjection={(svg) => {
-												svg.setAttribute(
-													"fill",
-													"var(--green)"
-												);
-												svg.setAttribute(
-													"width",
-													"32px"
-												);
-												svg.setAttribute(
-													"height",
-													"32px"
-												);
-											}}
-											className="me-3"
-											onClick={() =>
-												handleDownloadClick()
-											}
-										/>
-										<ReactSVG
-											src="/assets/images/facebook-logo.svg"
-											beforeInjection={(svg) => {
-												svg.setAttribute(
-													"fill",
-													"var(--green)"
-												);
-												svg.setAttribute(
-													"width",
-													"35px"
-												);
-												svg.setAttribute(
-													"height",
-													"35px"
-												);
-											}}
-											onClick={() =>
-												handleDownloadClick()
-											}
-										/>
+										<motion.div
+											whileHover={{ scale: 1.1 }}
+											whileTap={{ scale: 1 }}
+											className="me-2 cursor-pointer"
+										>
+											<ReactSVG
+												src="/assets/images/instagram-logo.svg"
+												beforeInjection={(svg) => {
+													svg.setAttribute(
+														"fill",
+														"var(--green)"
+													);
+													svg.setAttribute(
+														"width",
+														"32px"
+													);
+													svg.setAttribute(
+														"height",
+														"32px"
+													);
+												}}
+												onClick={() =>
+													handleDownloadClick()
+												}
+											/>
+										</motion.div>
+										<motion.div
+											whileHover={{ scale: 1.1 }}
+											whileTap={{ scale: 1 }}
+											className="cursor-pointer"
+										>
+											<ReactSVG
+												src="/assets/images/facebook-logo.svg"
+												beforeInjection={(svg) => {
+													svg.setAttribute(
+														"fill",
+														"var(--green)"
+													);
+													svg.setAttribute(
+														"width",
+														"35px"
+													);
+													svg.setAttribute(
+														"height",
+														"35px"
+													);
+												}}
+												onClick={() =>
+													handleDownloadClick()
+												}
+											/>
+										</motion.div>
 									</Col>
 								</Row>
 							</Col>

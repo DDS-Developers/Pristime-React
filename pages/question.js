@@ -110,6 +110,7 @@ function Question() {
 				<Row className="justify-content-center bg-question h-100">
 					<Col
 						lg={10}
+						xl={8}
 						className="position-relative"
 						style={{ zIndex: 1 }}
 					>

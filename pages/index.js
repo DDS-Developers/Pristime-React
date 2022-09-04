@@ -39,7 +39,12 @@ function Index() {
 				className="header-web d-block d-lg-none"
 			/>
 			<Row className="justify-content-center bg-landing h-100">
-				<Col lg={6} className="position-relative" style={{ zIndex: 1 }}>
+				<Col
+					lg={6}
+					xl={5}
+					className="position-relative"
+					style={{ zIndex: 1 }}
+				>
 					<Row className="justify-content-center">
 						<Col xs={9} lg>
 							<h1 className="text-center font-quick-sand-bold font-size-28">
