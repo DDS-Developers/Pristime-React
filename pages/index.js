@@ -43,8 +43,8 @@ function Index() {
 					<Row className="justify-content-center">
 						<Col xs={9} lg>
 							<h1 className="text-center font-quick-sand-bold font-size-28">
-								Mainkan quiz Pristime <br /> It's Pristine8.6+
-								Time versi Kamu!
+								Mainkan quiz Pristime <br /> It&apos;s
+								Pristine8.6+ Time versi Kamu!
 							</h1>
 						</Col>
 					</Row>

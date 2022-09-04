@@ -60,8 +60,8 @@ function InvitationModal({ show, onClose, data }) {
 						</div>
 						<div className="text-center font-quick-sand-bold font-size-18 mb-4 color-dark-green line-height-25">
 							Tukarkan unique code ini untuk bisa dapetin FREE
-							STARTER KIT di event Pristime, It's Pristine 8.6+
-							Time!
+							STARTER KIT di event Pristime, It&apos;s Pristine
+							8.6+ Time!
 						</div>
 						<Image
 							src="/assets/images/popup_header_baru.png"
