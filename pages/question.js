@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 
-function Index() {
+function Question() {
 	const router = useRouter();
 
 	const [loading, setLoading] = useState(true);
@@ -151,4 +151,4 @@ function Index() {
 	);
 }
 
-export default Index;
+export default Question;

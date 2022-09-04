@@ -247,6 +247,10 @@ a {
 	max-width: 100px;
 }
 
+.tnc-required {
+	margin-left: 30px;
+}
+
 @media (max-width: 575.98px) {
 	.bg-landing .bg-form {
 		background-image: url("/assets/images/UiBgQues.png");
@@ -258,7 +262,6 @@ a {
 	}
 
 	.bg-landing h1 {
-		margin-top: 2rem;
 		margin-bottom: 4rem;
 	}
 
@@ -339,5 +342,13 @@ a {
 
 	.line-height-25 {
 		line-height: 15px;
+	}
+
+	small.form-text {
+		font-size: 10px;
+	}
+
+	.tnc-required {
+		margin-left: 18px;
 	}
 }

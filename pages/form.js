@@ -4,9 +4,11 @@ import InvitationModal from "../components/InvitationModal";
 
 // Constants
 import bandungPostalCode from "../constants/bandungPostalCode.json";
+import URL from "../constants/URL";
+import { err } from "../constants/messages";
 
 // Dependencies
-import { Col, Image, Row, Form } from "react-bootstrap";
+import { Col, Image, Row, Form, Spinner } from "react-bootstrap";
 import { useForm, Controller } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
@@ -15,6 +17,9 @@ import { motion } from "framer-motion";
 import * as yup from "yup";
 import dynamic from "next/dynamic";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useRouter } from "next/router";
+import { hasCookie, getCookie, setCookie } from "cookies-next";
+import axios from "axios";
 
 const Select = dynamic(() => import("react-select"), {
 	ssr: false,
@@ -38,9 +43,10 @@ const styles = {
 		...provided,
 		backgroundColor: "var(--green)",
 	}),
-	option: (provided) => ({
+	option: (provided, state) => ({
 		...provided,
-		color: "var(--green)",
+		color: "black",
+		backgroundColor: state.isSelected && "var(--green)",
 	}),
 };
 
@@ -66,9 +72,13 @@ const schema = yup.object().shape({
 		),
 });
 
-function Index() {
+function FormPage() {
+	const router = useRouter();
+
 	const [postalCodes, setPostalCodes] = useState([]);
 	const [invitationModalShow, setInvitationModalShow] = useState(false);
+	const [submitLoading, setSubmitLoading] = useState(false);
+	const [submitData, setSubmitData] = useState({});
 
 	const {
 		register,
@@ -82,6 +92,11 @@ function Index() {
 	});
 
 	useEffect(() => {
+		if (hasCookie("token") === false) {
+			router.push("/");
+		}
+
+		const token = getCookie("token");
 		const mappedPostalCodes = bandungPostalCode.data.map((row) => {
 			return {
 				value: row,
@@ -90,18 +105,51 @@ function Index() {
 		});
 
 		setPostalCodes(mappedPostalCodes);
-
-		setTimeout(() => {
-			setInvitationModalShow(true);
-		}, 100);
+		setValue("token", token);
 	}, []);
 
 	const handleInvitationModalClose = () => {
 		setInvitationModalShow(false);
 	};
 
-	const onSubmit = (data) => {
-		console.log(data);
+	const onSubmit = async (data) => {
+		setSubmitLoading(true);
+
+		const url = `${URL.API}/bandung_submission`;
+		const mappedData = {
+			...data,
+			postal_code: data.postal_code.value,
+		};
+
+		try {
+			const result = await axios.post(url, mappedData);
+
+			setSubmitData(result.data.result);
+			setSubmitLoading(false);
+			setInvitationModalShow(true);
+			setCookie("has_played", true);
+			reset();
+		} catch (error) {
+			setSubmitLoading(false);
+
+			var message = err;
+
+			if (error.response) {
+				switch (typeof error.response.data.message) {
+					case "object":
+						for (var key in error.response.data.message) {
+							message = error.response.data.message[key];
+
+							break;
+						}
+						break;
+					default:
+						message = error.response.data.message;
+				}
+			}
+
+			alert(message);
+		}
 	};
 
 	return (
@@ -345,10 +393,7 @@ function Index() {
 										{...register("accept_tnc")}
 									/>
 									{errors.accept_tnc && (
-										<Form.Text
-											className="text-danger"
-											style={{ marginLeft: "30px" }}
-										>
+										<Form.Text className="text-danger tnc-required">
 											{errors.accept_tnc.message}
 										</Form.Text>
 									)}
@@ -362,6 +407,7 @@ function Index() {
 										whileHover={{ scale: 1.1 }}
 										whileTap={{ scale: 1 }}
 										style={{ height: "36px" }}
+										disabled={submitLoading}
 									>
 										<span className="font-size-20 ms-4 ms-lg-0">
 											KIRIM
@@ -375,13 +421,23 @@ function Index() {
 												right: "2px",
 											}}
 										>
-											<FontAwesomeIcon
-												icon={faChevronRight}
-												style={{
-													height: "15px",
-													width: "auto",
-												}}
-											/>
+											{submitLoading ? (
+												<Spinner
+													as="span"
+													animation="border"
+													size="sm"
+													role="status"
+													aria-hidden="true"
+												/>
+											) : (
+												<FontAwesomeIcon
+													icon={faChevronRight}
+													style={{
+														height: "15px",
+														width: "auto",
+													}}
+												/>
+											)}
 										</div>
 									</motion.button>
 								</Col>
@@ -393,9 +449,10 @@ function Index() {
 			<InvitationModal
 				show={invitationModalShow}
 				onClose={handleInvitationModalClose}
+				data={submitData}
 			/>
 		</React.Fragment>
 	);
 }
 
-export default Index;
+export default FormPage;

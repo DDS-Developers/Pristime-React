@@ -1,12 +1,31 @@
 // Components
 import Master from "../components/Master";
 
+// Constants
+import URL from "../constants/URL";
+
 // Dependencies
 import Link from "next/link";
 import { Col, Image, Row } from "react-bootstrap";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
+import { hasCookie, setCookie } from "cookies-next";
+import axios from "axios";
 
 function Index() {
+	useEffect(() => {
+		async function getToken() {
+			const url = `${URL.API}/bandung_submission/generate_token`;
+			const result = await axios.get(url);
+
+			setCookie("token", result.data.result.token);
+		}
+
+		if (hasCookie("token") === false) {
+			getToken();
+		}
+	}, []);
+
 	return (
 		<Master>
 			<Image

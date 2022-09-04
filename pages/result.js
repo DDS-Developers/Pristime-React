@@ -1,15 +1,20 @@
 // Components
 import Master from "../components/Master";
 
+// Constants
+import URL from "../constants/URL";
+import { err } from "../constants/messages";
+
 // Dependencies
-import Link from "next/link";
 import { Col, Image, Row } from "react-bootstrap";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { ReactSVG } from "react-svg";
+import { hasCookie } from "cookies-next";
+import axios from "axios";
 
-function Index() {
+function Result() {
 	const router = useRouter();
 
 	const [content, setContent] = useState({
@@ -18,11 +23,16 @@ function Index() {
 		copy_image: "",
 	});
 	const [loading, setLoading] = useState(true);
+	const [showStarterKitButton, setShowStarterKitButton] = useState(true);
 
 	useEffect(() => {
 		setTimeout(() => {
 			setLoading(false);
 		}, 100);
+
+		if (hasCookie("has_played")) {
+			setShowStarterKitButton(false);
+		}
 	}, []);
 
 	useEffect(() => {
@@ -53,6 +63,28 @@ function Index() {
 
 		setContent(newContent);
 	}, [router.query.type]);
+
+	const handleGetFreeStarterKitClick = async () => {
+		const url = `${URL.API}/bandung_submission/get_total`;
+
+		try {
+			const result = await axios.get(url);
+
+			if (result.data.result.total > 2000) {
+				alert("Mohon maaf kuota telah habis 🙏");
+			}
+
+			router.push("/form");
+		} catch (error) {
+			var message = err;
+
+			if (error.response) {
+				message = error.response.data.message;
+			}
+
+			alert(message);
+		}
+	};
 
 	return (
 		<Master>
@@ -104,13 +136,16 @@ function Index() {
 									fluid
 									className="mb-4"
 								/>
-								<Row className="justify-content-center mb-3">
-									<Col xs={10} lg>
-										<Link href="/form">
+								{showStarterKitButton && (
+									<Row className="justify-content-center mb-3">
+										<Col xs={10} lg>
 											<motion.div
 												className="rounded-pill bg-dark-green shadow py-1 py-lg-3 font-quick-sand-bold text-center font-size-14 cursor-pointer"
 												whileHover={{ scale: 1.1 }}
 												whileTap={{ scale: 1 }}
+												onClick={() =>
+													handleGetFreeStarterKitClick()
+												}
 											>
 												<span className="d-none d-lg-block">
 													DAPATKAN FREE STARTER KIT DI
@@ -122,10 +157,10 @@ function Index() {
 													DI SINI!
 												</span>
 											</motion.div>
-										</Link>
-									</Col>
-								</Row>
-								{/* <Row className="justify-content-center align-items-center">
+										</Col>
+									</Row>
+								)}
+								<Row className="justify-content-center align-items-center">
 									<Col lg={5} className="mb-2 mb-lg-0">
 										<div className="text-center color-green share-to">
 											Share to:
@@ -171,7 +206,7 @@ function Index() {
 											}}
 										/>
 									</Col>
-								</Row> */}
+								</Row>
 							</Col>
 						</Row>
 					</Col>
@@ -181,4 +216,4 @@ function Index() {
 	);
 }
 
-export default Index;
+export default Result;

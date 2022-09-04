@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { useRouter } from "next/router";
 
-function InvitationModal({ show, onClose }) {
+function InvitationModal({ show, onClose, data }) {
 	const router = useRouter();
 
 	const handleSelesaiClick = () => {
@@ -28,7 +28,7 @@ function InvitationModal({ show, onClose }) {
 							UNIQUE CODE:
 						</div>
 						<div className="border-green-bold color-green font-quick-sand-bold text-center rounded-pill font-size-20b">
-							PRSTM41
+							{data.unique_code}
 						</div>
 					</div>
 					<Image
@@ -56,7 +56,7 @@ function InvitationModal({ show, onClose }) {
 							Congratulations!
 						</div>
 						<div className="font-quick-sand-bold color-dark-green text-center font-size-35 mb-3 border-bottom-green-dashed">
-							Rifqi Fadhil
+							{data.name}
 						</div>
 						<div className="text-center font-quick-sand-bold font-size-18 mb-4 color-dark-green line-height-25">
 							Tukarkan unique code ini untuk bisa dapetin FREE
