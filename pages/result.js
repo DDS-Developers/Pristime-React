@@ -104,7 +104,6 @@ function Result() {
 				filenameArray[0]
 			);
 		} catch (error) {
-			console.log(error);
 			var message = err;
 
 			if (error.response) {
