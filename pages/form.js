@@ -24,8 +24,8 @@ const styles = {
 	control: (provided, state) => ({
 		...provided,
 		borderRadius: "var(--bs-border-radius-pill) !important",
-		paddingTop: ".2rem",
-		paddingBottom: ".2rem",
+		paddingTop: ".1rem",
+		paddingBottom: ".1rem",
 		paddingLeft: ".2rem",
 		border: "1px solid var(--green)",
 		boxShadow: state.isFocused && "0 0 0 0.25rem rgba(23, 169, 156, 0.25)",
@@ -90,6 +90,10 @@ function Index() {
 		});
 
 		setPostalCodes(mappedPostalCodes);
+
+		setTimeout(() => {
+			setInvitationModalShow(true);
+		}, 100);
 	}, []);
 
 	const handleInvitationModalClose = () => {
@@ -110,9 +114,15 @@ function Index() {
 						fluid
 						className="d-none d-lg-block"
 					/>
+					<Image
+						src="/assets/images/UiThankUMobile.png"
+						alt="Mobile Thank You"
+						fluid
+						className="d-block d-lg-none"
+					/>
 					<div
-						className="position-absolute w-100 text-center"
-						style={{ bottom: "-4.5%", left: 0 }}
+						className="position-absolute w-100 text-center scroll-ke-bawah"
+						style={{ left: 0 }}
 					>
 						<a
 							href="#form-row"
@@ -136,22 +146,22 @@ function Index() {
 					<Col lg={8}>
 						<Form onSubmit={handleSubmit(onSubmit)}>
 							<input type="hidden" {...register("token")} />
-							<div className="text-center color-green mb-3 font-size-20">
+							<div className="text-center color-green mb-3 font-size-20b">
 								Isi data di bawah ini:
 							</div>
 							<div className="d-grid gap-2">
 								<Row>
-									<Form.Label className="col-lg-3 col-form-label color-green font-size-20">
+									<Form.Label className="col-4 col-lg-3 col-form-label color-green font-size-20b">
 										Nama*
 									</Form.Label>
-									<Col lg>
+									<Col xs lg>
 										<div className="d-flex align-items-center">
 											<Form.Label className="color-green me-3">
 												:
 											</Form.Label>
 											<Form.Control
 												type="text"
-												className="rounded-pill py-2 border-green"
+												className="rounded-pill py-lg-2 border-green"
 												defaultValue=""
 												{...register("name")}
 											/>
@@ -164,17 +174,17 @@ function Index() {
 									</Col>
 								</Row>
 								<Row className="align-items-center">
-									<Form.Label className="col-lg-3 col-form-label color-green font-size-20">
+									<Form.Label className="col-4 col-lg-3 col-form-label color-green font-size-20b">
 										No. KTP (NIK)*
 									</Form.Label>
-									<Col lg>
+									<Col xs lg>
 										<div className="d-flex align-items-center">
 											<Form.Label className="color-green me-3">
 												:
 											</Form.Label>
 											<Form.Control
 												type="text"
-												className="rounded-pill py-2 border-green"
+												className="rounded-pill py-lg-2 border-green"
 												defaultValue=""
 												{...register("nik")}
 											/>
@@ -187,17 +197,17 @@ function Index() {
 									</Col>
 								</Row>
 								<Row className="align-items-center">
-									<Form.Label className="col-lg-3 col-form-label color-green font-size-20">
+									<Form.Label className="col-4 col-lg-3 col-form-label color-green font-size-20b">
 										Email*
 									</Form.Label>
-									<Col lg>
+									<Col xs lg>
 										<div className="d-flex align-items-center">
 											<Form.Label className="color-green me-3">
 												:
 											</Form.Label>
 											<Form.Control
 												type="email"
-												className="rounded-pill py-2 border-green"
+												className="rounded-pill py-lg-2 border-green"
 												defaultValue=""
 												{...register("email")}
 											/>
@@ -210,17 +220,17 @@ function Index() {
 									</Col>
 								</Row>
 								<Row className="align-items-center">
-									<Form.Label className="col-lg-3 col-form-label color-green font-size-20">
+									<Form.Label className="col-4 col-lg-3 col-form-label color-green font-size-20b">
 										Kota*
 									</Form.Label>
-									<Col lg>
+									<Col xs lg>
 										<div className="d-flex align-items-center">
 											<Form.Label className="color-green me-3">
 												:
 											</Form.Label>
 											<Form.Control
 												type="text"
-												className="rounded-pill py-2 border-green"
+												className="rounded-pill py-lg-2 border-green"
 												defaultValue="Bandung"
 												readOnly
 												{...register("city")}
@@ -234,10 +244,10 @@ function Index() {
 									</Col>
 								</Row>
 								<Row className="align-items-center">
-									<Form.Label className="col-lg-3 col-form-label color-green font-size-20">
+									<Form.Label className="col-4 col-lg-3 col-form-label color-green font-size-20b">
 										Kode Pos*
 									</Form.Label>
-									<Col lg>
+									<Col xs lg>
 										<div className="d-flex align-items-center">
 											<Form.Label className="color-green me-3">
 												:
@@ -276,10 +286,11 @@ function Index() {
 									</Col>
 								</Row>
 								<Row className="align-items-center">
-									<Form.Label className="col-lg-3 col-form-label color-green font-size-20">
+									<Form.Label className="col-4 col-lg-3 col-form-label color-green font-size-20b">
 										Alamat
 									</Form.Label>
 									<Col
+										xs
 										lg
 										className="d-flex align-items-center"
 									>
@@ -295,10 +306,10 @@ function Index() {
 									</Col>
 								</Row>
 								<Row className="align-items-center">
-									<Form.Label className="col-lg-3 col-form-label color-green font-size-20">
+									<Form.Label className="col-4 col-lg-3 col-form-label color-green font-size-20b">
 										No. Whatsapp*
 									</Form.Label>
-									<Col lg>
+									<Col xs lg>
 										<div className="d-flex align-items-center">
 											<Form.Label className="color-green me-3">
 												:
@@ -325,11 +336,11 @@ function Index() {
 									</div>
 								</Col>
 							</Row>
-							<Row className="justify-content-end mb-3">
-								<Col lg={9}>
+							<Row className="justify-content-lg-end mb-3">
+								<Col xs={10} lg={9}>
 									<Form.Check
 										label="Saya menyetujui untuk menerima segala bentuk info dan promosi dari Pristine8.6+ dalam bentuk email, panggilan, maupun SMS."
-										className="color-green font-size-20"
+										className="color-green font-size-20b"
 										id="accept-tnc"
 										{...register("accept_tnc")}
 									/>
@@ -344,15 +355,15 @@ function Index() {
 								</Col>
 							</Row>
 							<Row className="justify-content-center">
-								<Col lg={3} className="d-grid">
+								<Col xs={5} lg={3} className="d-grid">
 									<motion.button
 										type="submit"
-										className="rounded-pill border-green bg-white color-green font-quick-sand-bold py-2 d-flex align-items-center justify-content-center position-relative"
+										className="rounded-pill border-green bg-white color-green font-quick-sand-bold py-2 d-flex align-items-center justify-content-lg-center position-relative"
 										whileHover={{ scale: 1.1 }}
 										whileTap={{ scale: 1 }}
 										style={{ height: "36px" }}
 									>
-										<span className="font-size-20">
+										<span className="font-size-20 ms-4 ms-lg-0">
 											KIRIM
 										</span>
 										<div
