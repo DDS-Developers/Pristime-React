@@ -35,8 +35,10 @@ function Question() {
 					title: "Bangun tidur kamu pilih minum apa?",
 					questionAHref: "/question?number=2",
 					questionAImage: "/assets/images/Q1A.png",
+					questionAText: "Apa aja di depan mata, kopi dan teh sikat!",
 					questionBHref: "/question?number=3",
 					questionBImage: "/assets/images/Q1B.png",
+					questionBText: "Air putih atuh!",
 				};
 				break;
 			case "2":
@@ -44,8 +46,10 @@ function Question() {
 					title: "Sebelum mandi, kamu biasanya ngapain?",
 					questionAHref: "/question?number=4",
 					questionAImage: "/assets/images/Q2A.png",
+					questionAText: "Scroll socmed sambil rebahan",
 					questionBHref: "/question?number=4",
 					questionBImage: "/assets/images/Q2B.png",
+					questionBText: "Pemanasan bentar, terus olahraga santai",
 				};
 				break;
 			case "3":
@@ -53,8 +57,11 @@ function Question() {
 					title: "Sarapan dulu mereun. Menu pilihan kamu?",
 					questionAHref: "/question?number=4",
 					questionAImage: "/assets/images/Q3A.png",
+					questionAText: "Bala-bala + cengek atuh, mantep pisan!",
 					questionBHref: "/question?number=4",
 					questionBImage: "/assets/images/Q3B.png",
+					questionBText:
+						"Buah-buahan, biar seger tambah sebotol Pristine8.6+",
 				};
 				break;
 			case "4":
@@ -62,8 +69,12 @@ function Question() {
 					title: "Udah di kantor nih! Kebiasaan kamu di kantor ngapain aja?",
 					questionAHref: "/question?number=5",
 					questionAImage: "/assets/images/Q4A.png",
+					questionAText:
+						"Kerja efektif sesuai to-do-list, minum air putih cukup, dan rutin stretching",
 					questionBHref: "/result?type=workaholic",
 					questionBImage: "/assets/images/Q4B.png",
+					questionBText:
+						"Kerja sampai lupa waktu, lupa makan, dan lupa minum",
 				};
 				break;
 			case "5":
@@ -71,8 +82,12 @@ function Question() {
 					title: "Wah beres gawe nih, lanjut ke mana ya?",
 					questionAHref: "/result?type=balance",
 					questionAImage: "/assets/images/Q5A.png",
+					questionAText:
+						"Nongkrong ah jeung barudak, minumnya Pristine8.6+",
 					questionBHref: "/result?type=fomo",
 					questionBImage: "/assets/images/Q5B.png",
+					questionBText:
+						"Maraton nonton series sambil ngemil martabak",
 				};
 		}
 
@@ -116,6 +131,7 @@ function Question() {
 											src={content.questionAImage}
 											alt="Question Image A"
 											fluid
+											data-text={content.questionAText}
 										/>
 									</motion.div>
 								</Link>
@@ -139,6 +155,7 @@ function Question() {
 											src={content.questionBImage}
 											alt="Question Image B"
 											fluid
+											data-text={content.questionBText}
 										/>
 									</motion.div>
 								</Link>

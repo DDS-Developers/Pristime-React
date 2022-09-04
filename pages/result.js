@@ -46,6 +46,7 @@ function Result() {
 					image: "/assets/images/R1.png",
 					title: "SI WORKAHOLIC",
 					copy_image: "/assets/images/COPY MOBILE1.png",
+					text: "Duh euy, gawe wae atuh. Gawe boleh tapi kesehatannya dijaga dong. Biasain Pristime dengan rutin minum Pristine8.6+ yuk mulai sekarang biar pH tubuh kamu jadi seimbang",
 				};
 				break;
 			case "fomo":
@@ -53,6 +54,7 @@ function Result() {
 					image: "/assets/images/R2.png",
 					title: "SI FOMO",
 					copy_image: "/assets/images/COPY MOBILE2.png",
+					text: "Hayuk, saeutik deui meureun buat jadi lebih baik. Bisa kok! Kuy, biasain Pristime bareng Pristine8.6+ tiap maraton series. Kamu refreshed, pH tubuh juga seimbang",
 				};
 				break;
 			case "balance":
@@ -60,6 +62,7 @@ function Result() {
 					image: "/assets/images/R3.png",
 					title: "SI BALANCE",
 					copy_image: "/assets/images/COPY MOBILE3.png",
+					text: "Asli keren euy! Kamu udah biasain Pristime pas nongkrong jeung barudak. Lanjutin terus ya kebiasaannya. Ajakin juga yang lainnya jaga keseimbangan pH tubuh bareng Pristine8.6+",
 				};
 		}
 
@@ -163,6 +166,7 @@ function Result() {
 									alt="Copy Image"
 									fluid
 									className="mb-4"
+									data-text={content.text}
 								/>
 								{showStarterKitButton && (
 									<Row className="justify-content-center mb-3">
