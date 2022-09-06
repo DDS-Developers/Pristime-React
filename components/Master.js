@@ -9,15 +9,6 @@ function Master({ children }) {
 				<title>Pristime! Pristine8.6+</title>
 				<meta name="description" content="Pristime! Pristine8.6+" />
 				<link rel="icon" href="/assets/images/pristine-8-6-logo.png" />
-				<script
-					async
-					src="https://www.googletagmanager.com/gtag/js?id=G-82VSCQ513F"
-				/>
-				<script>
-					window.dataLayer = window.dataLayer || []; function gtag()
-					{dataLayer.push(arguments)}
-					gtag('js', new Date()); gtag('config', 'G-82VSCQ513F');
-				</script>
 			</Head>
 			<Container fluid style={{ height: "100vh" }}>
 				<Row
