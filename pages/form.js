@@ -57,7 +57,7 @@ const schema = yup.object().shape({
 		.string()
 		.email("Silakan isi dengan email yang valid.")
 		.required("Silakan isi email kamu."),
-	city: yup.string().required("Silakan isi kota domisili kamu."),
+	city: yup.string().required("Silakan isi kota/ kabupaten domisili kamu."),
 	postal_code: yup
 		.object()
 		.required("Silakan pilih kode pos domisili kamu.")
@@ -269,7 +269,7 @@ function FormPage() {
 								</Row>
 								<Row className="align-items-center">
 									<Form.Label className="col-4 col-lg-3 col-form-label color-green font-size-20b">
-										Kota*
+										Kota/ Kabupaten*
 									</Form.Label>
 									<Col xs lg>
 										<div className="d-flex align-items-center">
