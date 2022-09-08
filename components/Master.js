@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
+import Script from "next/script";
 
 function Master({ children }) {
 	return (
@@ -10,6 +11,17 @@ function Master({ children }) {
 				<meta name="description" content="Pristime! Pristine8.6+" />
 				<link rel="icon" href="/assets/images/pristine-8-6-logo.png" />
 			</Head>
+			<Script src="https://www.googletagmanager.com/gtag/js?id=G-82VSCQ513F" />
+			<Script
+				id="google-analytics"
+				strategy="afterInteractive"
+				dangerouslySetInnerHTML={{
+					__html: `window.dataLayer = window.dataLayer || [];
+  							function gtag(){dataLayer.push(arguments);}
+  							gtag('js', new Date());
+							gtag('config', 'G-82VSCQ513F');`,
+				}}
+			/>
 			<Container fluid style={{ height: "100vh" }}>
 				<Row
 					className="shadow bg-white position-relative"
