@@ -19,6 +19,7 @@
 		"bootstrap": "^5.2.0",
 		"cookies-next": "^2.1.1",
 		"framer-motion": "^7.2.1",
+		"ga-4-react": "^0.1.281",
 		"next": "12.2.5",
 		"react": "18.2.0",
 		"react-base64-downloader": "^2.1.7",
