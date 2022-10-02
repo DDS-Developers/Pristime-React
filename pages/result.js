@@ -75,7 +75,7 @@ function Result() {
 		try {
 			const result = await axios.get(url);
 
-			if (result.data.result.total > 2000) {
+			if (result.data.result.total > 5000) {
 				alert("Mohon maaf kuota telah habis 🙏");
 			}
 
