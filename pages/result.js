@@ -75,11 +75,14 @@ function Result() {
 		try {
 			const result = await axios.get(url);
 
-			if (result.data.result.total > 5000) {
+			if (
+				result.data.result.total > 5000 ||
+				result.data.result.todays_total > 100
+			) {
 				alert("Mohon maaf kuota telah habis 🙏");
+			} else {
+				router.push("/form");
 			}
-
-			router.push("/form");
 		} catch (error) {
 			var message = err;
 
