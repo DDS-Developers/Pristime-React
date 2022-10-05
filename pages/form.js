@@ -52,7 +52,9 @@ const styles = {
 
 const schema = yup.object().shape({
 	name: yup.string().required("Silakan isi nama kamu."),
-	nik: yup.string().required("Silakan isi No. KTP kamu."),
+	nik: yup
+		.number("Silakan isi dengan No. KTP yang valid.")
+		.required("Silakan isi No. KTP kamu."),
 	email: yup
 		.string()
 		.email("Silakan isi dengan email yang valid.")
